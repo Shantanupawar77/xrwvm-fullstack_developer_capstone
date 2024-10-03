@@ -14,3 +14,4 @@ admin.site.register(CarModel)
 # CarMakeAdmin class with CarModelInline
 
 # Register models here
+ 
