@@ -18,6 +18,7 @@ from .populate import initiate
 from .models import CarMake, CarModel
 from .restapis import get_request, analyze_review_sentiments, post_review
 
+
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
@@ -134,11 +135,3 @@ def add_review(request):
     else:
         return JsonResponse({"status":403,"message":"Unauthorized"})
 
-def post_review(data_dict):
-    request_url = backend_url+"/insert_review"
-    try:
-        response = requests.post(request_url,json=data_dict)
-        print(response.json())
-        return response.json()
-    except:
-        print("Network exception occurred")
